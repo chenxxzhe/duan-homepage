@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="度岸信息科技有限责任公司官方网站">
+        <meta name="keywords" content="度岸,移动应用,互联网解决方案,HTML5">
+        <title>度岸科技</title>
+        <link rel="shortcut icon" href="./img/duan_logo.ico">
+        <style type="text/css">
+            html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif, "微软雅黑", "Microsoft YaHei";
+                font-size: 24px;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background: rgba(1,4,15,1);
+                background: radial-gradient(ellipse at center, #4B34D3  0%, #202225 100%);
+            }
+            main {
+                position: relative;
+                /*display: flex;*/
+                /*justify-content: center;*/
+                /*align-items: center;*/
+                width: 100%;
+                /*height: 100%;*/
+                color: #fff;
+            }
+            .info-group {
+                /*position: absolute;*/
+                margin: 15% auto;
+                width: 80%;
+                text-align: center;
+            }
+            #compeny-name {
+                font-size: 2rem;
+            }
+            #intro {
+                font-size: 1rem;
+                white-space: nowrap;
+
+            }
+            #contact {
+                font-size: .9rem;
+            }
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                padding: .3rem;
+                color: #fff;
+                background-color: #222;
+            }
+            footer p {
+                text-align: center;
+                white-space: nowrap;
+                font-size: .5rem;
+            }
+
+            @media screen and (max-width: 500px) {
+                html {
+                    font-size: 16px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>123</header>
+        <main>
+            <div class="info-group">
+                <h1 id="compeny-name"></h1>
+                <p id="intro"></p>
+                <p id="contact"></p>
+            </div>
+        </main>
+        <footer><p>Copyright © 2015-2020 <wbr/>
+        广州度岸信息科技有限责任公司版权所有</p></footer>
+
+        <script src="./lib/jquery.min.js"></script>
+        <script src="./lib/typeit.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var typeConfig = function(cb) {
+                    return {
+                        speed: 100,
+                        startDelay: 1250,
+                        callback: cb
+                    }
+                }
+                function typeCompenyName(){
+                    $('#compeny-name').typeIt(typeConfig(typeIntro))
+                    .tiType('度岸科技')
+                    .tiPause(500)
+                }
+                function typeIntro(){
+                    $('#intro').typeIt(typeConfig(typeContact))
+                    .tiType('你好，还差一个程序员吗？')
+                    .tiPause(1000)
+                    .tiDelete()
+                    .tiType('度岸科技为您实现快速开发！')
+                    .tiPause(1000)
+                    $('.ti-cursor')[0].remove()
+
+                }
+                function typeContact(){
+                    $('#contact').typeIt(typeConfig())
+                    .tiType('联系方式：刘智丰 150-1565-2413')
+                    $('.ti-cursor')[0].remove()
+
+                }
+
+                // show time!
+                typeCompenyName();
+            })
+        </script>
+    </body>
+</html>
